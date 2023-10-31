@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap-5.3.1-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="alertActiveMessage"></div>
+  <div id="alertProductAdded"></div>
+  <div id="errorFeedback"></div>
+  <div id="alertInsufficientFunds"></div>
+
+  <!-- Max 576 BreakPoint -->
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+      <span class="budget-tracker-text-on-navbar"><b>BUDGET TRACKER</b></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a onclick="dashBoard()" class="nav-link active" aria-current="page" href="#"><b>DASH-BOARD</b></a>
+          <a class="nav-link" href="purchases.html"><b>PURCHASES</b></a>
+          <a class="nav-link" href="log-in.html"><b>LOG-OUT</b></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="menu-bar">
+    <div class="container">
+      <div>
+        <img class="budget-icon" src="Asset/Images/9110508.png" alt="budget-tracker-icon">
+        <span class="tracker-text"><b>TRACKER</b></span>
+      </div>
+      <div class="menu-bar-links">
+        <div>
+          <div class="active-line"></div>
+          <img class="grid-2-icon" src="Asset/Images/4263205.png" alt="">
+          <a onclick="dashBoard()" class="dashBoard-text-link" href="#"><b>DASH-BOARD</b></a>
+        </div>
+        <div class="purchases-link">
+          <img class="cart-icon" src="Asset/Images/3144456.png" alt="">
+          <a class="purchases-text-link" href="/purchases.html"><b>PURCHASES</b></a>
+        </div>
+        <div class="log-in-link">
+          <div class="divider"></div>
+          <img class="log-out-icon" src="Asset/Images/1828427.png" alt="">
+          <a class="log-out-text-link" href="log-in.html"><b>LOG-OUT</b></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="wrapper">
+      <div class="top-container">
+        <div class="client">
+          <p><b>Hello, Ms. Arogundade,</b></p>
+        </div>
+        <!-- <div class="date">
+          <img class="date-icon" src="/Asset/Images/833593.png" alt="">
+          <input type="date">
+        </div> -->
+        <div class="quote"><b>Believe</b> your <b>beliefs</b>, <b>doubt</b> your <b>doubts</b>, never <b>believe</b>
+          your <b>doubts</b>, never <b>doubt</b> your <b>beliefs</b>, because <b>no matter</b>, if you can't
+          <b>conceive</b>, it but if you <b>believe</b>, it you can <b>achieve</b>it.</div>
+        <div class="clock">
+          <div class="top"></div>
+          <div class="right"></div>
+          <div class="bottom"></div>
+          <div class="left"></div>
+          <div class="center"></div>
+          <div class="hour"></div>
+          <div class="minute"></div>
+          <div class="second"></div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front green">
+                <p class="heading_8264">Current Balance</p>
+                <span class="chip">$300,000.00</span>
+                <svg class="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36"
+                  viewBox="0 0 48 48">
+                  <path fill="#ff9800" d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"></path>
+                  <path fill="#d50000" d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"></path>
+                  <path fill="#ff3d00"
+                    d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z">
+                  </path>
+                </svg>
+                <svg version="1.1" class="contactless" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px"
+                  viewBox="0 0 50 50" xml:space="preserve">
+                </svg>
+                <p class="number">9759 2484 5269 6576</p>
+                <p class="valid_thru">VALID THRU</p>
+                <p class="date_8264">1 2 / 2 4</p>
+                <p class="name">Ms. Arogundade</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front blue">
+                <p class="heading_8264">Availble Balance</p>
+                <span class="chip" id="bal"></span>
+                <svg class="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36"
+                  viewBox="0 0 48 48">
+                  <path fill="#ff9800" d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"></path>
+                  <path fill="#d50000" d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"></path>
+                  <path fill="#ff3d00"
+                    d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z">
+                  </path>
+                </svg>
+                <svg version="1.1" class="contactless" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px"
+                  viewBox="0 0 50 50" xml:space="preserve">
+                </svg>
+                <p class="number">9759 2484 5269 6576</p>
+                <p class="valid_thru">VALID THRU</p>
+                <p class="date_8264">1 2 / 2 4</p>
+                <p class="name">Ms. Arogundade</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front red">
+                <div class="inputs">
+                  <input class="input" type="text" id="ProductName" placeholder="Input item here">
+                  <input class="input" type="number" id="ProductCost" placeholder="Input cost here">
+                  <input class="input" type="number" id="Quantity" placeholder="Input quantity here">
+                  <input class="input-button" type="submit" onclick="Add()" id="button"></input>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front purple">
+                <h5>TOTAL EXPENSES</h5>
+                <span id="ttlExp"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drop-container">
+      <div class="drop"></div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+<script src="bootstrap-5.3.1-dist/js/bootstrap.js"></script>
+
+</html>
